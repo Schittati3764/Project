@@ -14,7 +14,7 @@ mongoose.connect("mongodb://localhost:27017/PROJECT8020", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
-//Hlo
+//changes
 // define the model
 
 const Card = mongoose.model("Card", {
