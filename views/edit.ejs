@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('partials/meta.ejs') %>
+    <title>Home</title>
+  </head>
+  <body>
+    <main>
+      <div class="Head">
+        <div class="logo" id="box1"><img src="/images/logo.png" alt="" /></div>
+        <div class="Heading" id="box2"><h1>Electronic Shop</h1></div>
+      </div>
+      <div>
+        <nav>
+          <ul>
+            <li>
+              <a href="/customersData">Dashbord</a>
+            </li>
+            <li>
+              <a href="/logout">logout</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <h2>Edit</h2>
+      <form
+        action="/editprocess/<%= _id %>"
+        method="POST"
+        enctype="multipart/form-data"
+      >
+        <div class="wrapper">
+          <label for="scaryName">Name</label>
+          <input
+            type="text"
+            id="scaryName"
+            name="scaryName"
+            value="<%= scaryName %>"
+          />
+        </div>
+        <div class="wrapper">
+          <label for="scaryEmail">Email</label>
+          <input
+            type="text"
+            id="scaryEmail"
+            name="scaryEmail"
+            value="<%= scaryEmail %>"
+          />
+        </div>
+        <div class="wrapper">
+          <label for="scaryDescription">Description</label>
+          <input
+            type="text"
+            id="scaryDescription"
+            name="scaryDescription"
+            value="<%= scaryDescription %>"
+          />
+        </div>
+        <div class="wrapper">
+          <label for="scaryImage">Image</label>
+          <img
+            style="width: 50px"
+            src="/uploads/<%= scaryImageName %>"
+            alt="Photo"
+          />
+          <input type="file" id="scaryImage" name="scaryImage" />
+        </div>
+        <div class="submission">
+          <input type="submit" value="Submit" />
+        </div>
+      </form>
+      <%- include('partials/footer.ejs') %>
+    </main>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="/js/tinymce/tinymce.min.js"></script>
+    <script>
+      tinymce.init({
+        selector: "#scaryDescription",
+      });
+    </script>
+  </body>
+</html>

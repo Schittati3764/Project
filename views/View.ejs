@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('partials/meta.ejs') %>
+    <title>View</title>
+  </head>
+  <body>
+    <main>
+      <div class="Head">
+        <div class="logo" id="box1"><img src="/images/logo.png" alt="" /></div>
+        <div class="Heading" id="box2"><h1>Electronic Shop</h1></div>
+      </div>
+      <div>
+        <nav>
+          <ul>
+            <li>
+              <a href="/customersData">Dashbord</a>
+            </li>
+            <li>
+              <a href="/logout">logout</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <h2>View</h2>
+      <section>
+        <div class="Customers">
+          <table>
+            <tr>
+              <th>Name:</th>
+              <td><%= scaryName %></td>
+            </tr>
+            <tr>
+              <th>Email:</th>
+              <td><%= scaryEmail %></td>
+            </tr>
+            <tr>
+              <th>Description:</th>
+              <td><%- scaryDescription %></td>
+            </tr>
+          </table>
+          <img src="/uploads/<%= scaryImageName %>" alt="Photo" />
+        </div>
+      </section>
+      <%- include('partials/footer.ejs') %>
+    </main>
+  </body>
+</html>
