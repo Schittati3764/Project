@@ -8,7 +8,7 @@ const session = require("express-session");
 //const bodyParser = require('body-parser'); // not required for Express 4.16 onwards as bodyParser is now included with Express
 // set up expess validator
 const { check, validationResult } = require("express-validator"); //destructuring an object
-
+// index-dev-change
 // connect to DB
 mongoose.connect("mongodb://localhost:27017/PROJECT8020", {
   useNewUrlParser: true,
